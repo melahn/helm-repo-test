@@ -45,6 +45,14 @@ jobs:
           helm create charts/test-app-c3
           sed -i 's/0.1.0/0.3.0/g' charts/test-app-c3/Chart.yaml
           sed -i 's/test-app-c3/test-app-c/g' charts/test-app-c3/Chart.yaml
+          helm create charts/test-app-d
+          # add a dependency that will not be found in a helm repo and create a chart for it
+          echo "dependencies:" >> charts/test-app-d/Chart.yaml
+          echo "- name: test-app-e" >> charts/test-app-d/Chart.yaml
+          echo "  repository: \"\"" >> charts/test-app-d/Chart.yaml
+          cd charts/test-app-d
+          helm create charts/test-app-e
+          cd ../..
           # add the icon field that lint likes
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-a/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-b/Chart.yaml
@@ -52,8 +60,11 @@ jobs:
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c2/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c3/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/charts/test-app-e/Chart.yaml
           # lint the resulting modified charts
           helm lint charts/*
+          helm lint charts/test-app-d/charts/test-app-e
       # Package the charts
       - name: Package the charts
         run: |
@@ -63,6 +74,7 @@ jobs:
           helm package charts/test-app-c
           helm package charts/test-app-c2
           helm package charts/test-app-c3
+          helm package charts/test-app-d
       # Create the index
       - name: Create the index
         run: |
