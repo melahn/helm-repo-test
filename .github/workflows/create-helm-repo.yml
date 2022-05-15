@@ -55,7 +55,6 @@ jobs:
           # Create a non-standard dependency just because I find there are some odd helm charts
           # that do this. This is *not* a best practice but is only done here to reproduce cases
           # I have seen in the interest of a complete test.
-          mkdir charts
           helm create charts/test-app-e
           echo "dependencies:" >> charts/test-app-e/Chart.yaml
           echo "- name: common" >> charts/test-app-e/Chart.yaml
