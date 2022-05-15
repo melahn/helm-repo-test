@@ -46,14 +46,32 @@ jobs:
           sed -i 's/0.1.0/0.3.0/g' charts/test-app-c3/Chart.yaml
           sed -i 's/test-app-c3/test-app-c/g' charts/test-app-c3/Chart.yaml
           helm create charts/test-app-d
-          # add a dependency that will not be found in a helm repo and create a chart for it
+          # Add a dependency that will not be found in a helm repo and create a chart for it
           echo "dependencies:" >> charts/test-app-d/Chart.yaml
           echo "- name: test-app-e" >> charts/test-app-d/Chart.yaml
           echo "  repository: \"\"" >> charts/test-app-d/Chart.yaml
           echo "  version: 0.1.0" >> charts/test-app-d/Chart.yaml
           cd charts/test-app-d
+          # Create a non-standard dependency just because I find there are some odd helm charts
+          # that do this. This is *not* a best practice but is only done here to reproduce cases
+          # I have seen in the interest of a complete test.
+          mkdir charts
           helm create charts/test-app-e
-          cd ../..
+          echo "dependencies:" >> charts/test-app-e/Chart.yaml
+          echo "- name: common" >> charts/test-app-e/Chart.yaml
+          echo "  repository: https://charts.bitnami.com/bitnami" >> charts/test-app-e/Chart.yaml
+          echo "  version: 1.x.x"  >> charts/test-app-e/Chart.yaml
+          echo "- name: test-app-f" >> charts/test-app-e/Chart.yaml
+          echo "  repository: \"\"" >> charts/test-app-e/Chart.yaml
+          echo "  version: 0.1.0"  >> charts/test-app-e/Chart.yaml
+          cd charts/test-app-e
+          mkdir charts
+          helm create charts/test-app-f
+          echo "dependencies:" >> charts/test-app-f/Chart.yaml
+          echo "- name: common" >> charts/test-app-f/Chart.yaml
+          echo "  repository: https://charts.bitnami.com/bitnami" >> charts/test-app-f/Chart.yaml
+          echo "  version: 1.x.x" >> charts/test-app-f/Chart.yaml
+          cd ../../../..
           # add the icon field that lint likes
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-a/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-b/Chart.yaml
@@ -63,9 +81,11 @@ jobs:
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c3/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/charts/test-app-e/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/charts/test-app-e/charts/test-app-f/Chart.yaml
           # lint the resulting modified charts
-          helm lint charts/*
+          helm lint charts/test-app-d
           helm lint charts/test-app-d/charts/test-app-e
+          helm lint charts/test-app-d/charts/test-app-e/charts/test-app-f
       # Package the charts
       - name: Package the charts
         run: |
