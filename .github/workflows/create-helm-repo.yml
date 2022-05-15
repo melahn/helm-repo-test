@@ -64,7 +64,6 @@ jobs:
           echo "  repository: \"\"" >> charts/test-app-e/Chart.yaml
           echo "  version: 0.1.0"  >> charts/test-app-e/Chart.yaml
           cd charts/test-app-e
-          mkdir charts
           helm create charts/test-app-f
           echo "dependencies:" >> charts/test-app-f/Chart.yaml
           echo "- name: common" >> charts/test-app-f/Chart.yaml
