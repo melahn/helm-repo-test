@@ -31,9 +31,9 @@ jobs:
         run: |
           mkdir charts
           # app-a has 1 version
-          helm create charts/test-app-a1
+          helm create charts/test-app-a
           # app-b has 2 versions
-          helm create charts/test-app-b1
+          helm create charts/test-app-b
           helm create charts/test-app-b2
           sed -i 's/0.1.0/0.2.0/g' charts/test-app-b2/Chart.yaml
           sed -i 's/test-app-b2/test-app-b/g' charts/test-app-b2/Chart.yaml
@@ -46,77 +46,77 @@ jobs:
           sed -i 's/0.1.0/0.3.0/g' charts/test-app-c3/Chart.yaml
           sed -i 's/test-app-c3/test-app-c/g' charts/test-app-c3/Chart.yaml
           # create a chart with a dynamic dependency that will be found in a helm repo
-          helm create charts/test-app-d1
-          echo "dependencies:" >> charts/test-app-d1/Chart.yaml
-          echo "- name: test-app-e1" >> charts/test-app-d1/Chart.yaml
-          echo "  repository: \"\"" >> charts/test-app-d1/Chart.yaml
-          echo "  version: 0.1.0" >> charts/test-app-d1/Chart.yaml
-          cd charts/test-app-d1
-          helm create charts/test-app-e1
-          echo "dependencies:" >> charts/test-app-e1/Chart.yaml
-          echo "- name: test-app-f1" >> charts/test-app-e1/Chart.yaml
-          echo "  repository: \"\"" >> charts/test-app-e1/Chart.yaml
-          echo "  version: 0.1.0" >> charts/test-app-e1/Chart.yaml
+          helm create charts/test-app-d
+          echo "dependencies:" >> charts/test-app-d/Chart.yaml
+          echo "- name: test-app-e" >> charts/test-app-d/Chart.yaml
+          echo "  repository: \"\"" >> charts/test-app-d/Chart.yaml
+          echo "  version: 0.1.0" >> charts/test-app-d/Chart.yaml
+          cd charts/test-app-d
+          helm create charts/test-app-e
+          echo "dependencies:" >> charts/test-app-e/Chart.yaml
+          echo "- name: test-app-f" >> charts/test-app-e/Chart.yaml
+          echo "  repository: \"\"" >> charts/test-app-e/Chart.yaml
+          echo "  version: 0.1.0" >> charts/test-app-e/Chart.yaml
           cd charts/test-app-e1
-          helm create charts/test-app-f1
-          echo "dependencies:" >> charts/test-app-f1/Chart.yaml
-          echo "- name: test-app-x" >> charts/test-app-f1/Chart.yaml
-          echo "  repository: https://melahn.github.io/helm-repo" >> charts/test-app-f1/Chart.yaml
-          echo "  version: 0.1.0" >> charts/test-app-f1/Chart.yaml
+          helm create charts/test-app-f
+          echo "dependencies:" >> charts/test-app-f/Chart.yaml
+          echo "- name: test-app-x" >> charts/test-app-f/Chart.yaml
+          echo "  repository: https://melahn.github.io/helm-repo" >> charts/test-app-f/Chart.yaml
+          echo "  version: 0.1.0" >> charts/test-app-f/Chart.yaml
           cd ../../../..
           # create a chart with a dynamic dependency that will not be found in a helm repo
-          helm create charts/test-app-g1
-          echo "dependencies:" >> charts/test-app-g1/Chart.yaml
-          echo "- name: test-app-h1" >> charts/test-app-g1/Chart.yaml
-          echo "  repository: \"\"" >> charts/test-app-g1Chart.yaml
-          echo "  version: 0.1.0" >> charts/test-app-g1/Chart.yaml
-          cd charts/test-app-g1
-          helm create charts/test-app-h1
-          echo "dependencies:" >> charts/test-app-h1/Chart.yaml
-          echo "- name: test-app-i1" >> charts/test-app-h1/Chart.yaml
-          echo "  repository: \"\"" >> charts/test-app-h1/Chart.yaml
-          echo "  version: 0.1.0" >> charts/test-app-h1/Chart.yaml
-          cd charts/test-app-h1
-          helm create charts/test-app-i1
-          echo "dependencies:" >> charts/test-app-i1/Chart.yaml
-          echo "- name: no-chart-here" >> charts/test-app-i1/Chart.yaml
-          echo "  repository: https://melahn.github.io/helm-repo" >> charts/test-app-i1/Chart.yaml
-          echo "  version: 0.1.0" >> charts/test-app-i1/Chart.yaml
+          helm create charts/test-app-g
+          echo "dependencies:" >> charts/test-app-g/Chart.yaml
+          echo "- name: test-app-h" >> charts/test-app-g/Chart.yaml
+          echo "  repository: \"\"" >> charts/test-app-g/Chart.yaml
+          echo "  version: 0.1.0" >> charts/test-app-g/Chart.yaml
+          cd charts/test-app-g
+          helm create charts/test-app-h
+          echo "dependencies:" >> charts/test-app-h/Chart.yaml
+          echo "- name: test-app-i" >> charts/test-app-h/Chart.yaml
+          echo "  repository: \"\"" >> charts/test-app-h/Chart.yaml
+          echo "  version: 0.1.0" >> charts/test-app-h/Chart.yaml
+          cd charts/test-app-h
+          helm create charts/test-app-i
+          echo "dependencies:" >> charts/test-app-i/Chart.yaml
+          echo "- name: no-chart-here" >> charts/test-app-i/Chart.yaml
+          echo "  repository: https://melahn.github.io/helm-repo" >> charts/test-app-i/Chart.yaml
+          echo "  version: 0.1.0" >> charts/test-app-i/Chart.yaml
           cd ../../../..
           # add the icon field that lint likes
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-a1/Chart.yaml
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-b1/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-a/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-b/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-b2/Chart.yaml
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c1/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c2/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c3/Chart.yaml
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d1/Chart.yaml
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d1/charts/test-app-e1/Chart.yaml
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d1/charts/test-app-e1/charts/test-app-f1/Chart.yaml
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-g1/Chart.yaml
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-g1/charts/test-app-h1/Chart.yaml
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-g1/charts/test-app-h1/charts/test-app-i1/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/charts/test-app-e/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/charts/test-app-e/charts/test-app-f/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-g/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-g/charts/test-app-h/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-g/charts/test-app-h/charts/test-app-i/Chart.yaml
           # lint the resulting modified charts
-          helm lint charts/test-app-a1
-          helm lint charts/test-app-b1
+          helm lint charts/test-app-a
+          helm lint charts/test-app-b
           helm lint charts/test-app-b2
-          helm lint charts/test-app-c1
+          helm lint charts/test-app-c
           helm lint charts/test-app-c2
           helm lint charts/test-app-c3
-          helm lint charts/test-app-d1
-          # Expect a lint warning on test-app-f1 and test-app-i1 since they contain
+          helm lint charts/test-app-d
+          helm lint charts/test-app-d/charts/test-app-e
+          # Expect a lint warning on test-app-f and test-app-i since they each contain
           # a dynamic dependency.
           #
-          # In the case of test-app-f1, the dependency exists in a helm repo and
+          # In the case of test-app-f, the dependency exists in a helm repo and
           # can be successfully used with a helm dependency update.
           #
-          # In the case of test-app-i1, the dependency does not exists in a helm repo and
+          # In the case of test-app-i, the dependency does not exists in a helm repo and
           # so it wil fail when used even with a helm dependency update.
-          helm lint charts/test-app-d1/charts/test-app-e1
-          helm lint charts/test-app-d1/charts/test-app-e1/charts/test-app-f1
-          helm lint charts/test-app-g1
-          helm lint charts/test-app-g1/charts/test-app-h1
-          helm lint charts/test-app-g1/charts/test-app-h1/charts/test-app-i1
+          helm lint charts/test-app-d/charts/test-app-e/charts/test-app-f
+          helm lint charts/test-app-g
+          helm lint charts/test-app-g/charts/test-app-h
+          helm lint charts/test-app-g/charts/test-app-h/charts/test-app-i
       # Package the charts
       - name: Package the charts
         run: |
