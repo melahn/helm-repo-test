@@ -121,7 +121,7 @@ jobs:
       - name: Package the charts
         run: |
           helm package charts/test-app-a
-          helm package charts/test-app-b1
+          helm package charts/test-app-b
           helm package charts/test-app-b2
           helm package charts/test-app-c
           helm package charts/test-app-c2
