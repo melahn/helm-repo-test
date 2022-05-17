@@ -86,7 +86,7 @@ jobs:
           # add the icon field that lint likes
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-a1/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-b1/Chart.yaml
-          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-b12/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-b2/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c1/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c2/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-c3/Chart.yaml
