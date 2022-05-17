@@ -3,7 +3,7 @@ entries:
   test-app-a:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-15T21:09:21.854524408Z"
+    created: "2022-05-17T21:26:23.922747877Z"
     description: A Helm chart for Kubernetes
     digest: 3b2c875a5ee557732122738fb0477aefc68f8a1d402b0f653bd2f3960842201f
     icon: https://helm.sh/img/helm.svg
@@ -12,12 +12,24 @@ entries:
     urls:
     - https://melahn.github.io/helm-repo-test/test-app-a-0.1.0.tgz
     version: 0.1.0
+  test-app-a1:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-05-17T21:26:23.923577285Z"
+    description: A Helm chart for Kubernetes
+    digest: 11a33c4b0446d442b9cfc47c6db2d14fd307be41c6b113e9708265151cf26a60
+    icon: https://helm.sh/img/helm.svg
+    name: test-app-a1
+    type: application
+    urls:
+    - https://melahn.github.io/helm-repo-test/test-app-a1-0.1.0.tgz
+    version: 0.1.0
   test-app-b:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-15T21:09:21.856137529Z"
+    created: "2022-05-17T21:26:23.924650096Z"
     description: A Helm chart for Kubernetes
-    digest: 35d99aca975e4db322420b28b57a6050b8d5e1f631c7bfa237d7fe306f34dcf7
+    digest: 4275a22466e7c4b3471982cdcdbbd886cfa0781fdd95a55764101dc571ebe339
     icon: https://helm.sh/img/helm.svg
     name: test-app-b
     type: application
@@ -26,7 +38,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-15T21:09:21.855598222Z"
+    created: "2022-05-17T21:26:23.92410349Z"
     description: A Helm chart for Kubernetes
     digest: 5b2d4da4b59ce2af787c9443750f796514ad140b902ffc64221718f6a59c2d7b
     icon: https://helm.sh/img/helm.svg
@@ -35,12 +47,24 @@ entries:
     urls:
     - https://melahn.github.io/helm-repo-test/test-app-b-0.1.0.tgz
     version: 0.1.0
+  test-app-b1:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-05-17T21:26:23.925154001Z"
+    description: A Helm chart for Kubernetes
+    digest: ab43fa9e2f37b28d16f7597cca7e0f4b5b1eb0da5cfb13e016ca55c27c966299
+    icon: https://helm.sh/img/helm.svg
+    name: test-app-b1
+    type: application
+    urls:
+    - https://melahn.github.io/helm-repo-test/test-app-b1-0.1.0.tgz
+    version: 0.1.0
   test-app-c:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-15T21:09:21.857929652Z"
+    created: "2022-05-17T21:26:23.926514414Z"
     description: A Helm chart for Kubernetes
-    digest: 6e0b97f8cbc1f52239361d6808e9dbf1947b6a0eebfc7c2236968c1467171cd1
+    digest: dd73546657a13eaffdedea4507a8b485b5531a0a8aaada324437f60c712f411a
     icon: https://helm.sh/img/helm.svg
     name: test-app-c
     type: application
@@ -49,9 +73,9 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-15T21:09:21.857385545Z"
+    created: "2022-05-17T21:26:23.92605821Z"
     description: A Helm chart for Kubernetes
-    digest: 82096921aca8ccc3b3b167018be14249e4362e79742fe94787773a65c91a1c25
+    digest: 1db566fc24c4347322dd71f8b5d433316ae585783fe815c427fb05963705a979
     icon: https://helm.sh/img/helm.svg
     name: test-app-c
     type: application
@@ -60,7 +84,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-15T21:09:21.856658136Z"
+    created: "2022-05-17T21:26:23.925593805Z"
     description: A Helm chart for Kubernetes
     digest: 62232bcebded6bb3336c72ee02ea6a5a3768db6abd5049b041e6055ed1d07d95
     icon: https://helm.sh/img/helm.svg
@@ -69,20 +93,63 @@ entries:
     urls:
     - https://melahn.github.io/helm-repo-test/test-app-c-0.1.0.tgz
     version: 0.1.0
-  test-app-d:
+  test-app-c1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-15T21:09:21.859462872Z"
+    created: "2022-05-17T21:26:23.926937119Z"
+    description: A Helm chart for Kubernetes
+    digest: 4d9cf8d74ea93460befe557ffec25105e299ff99a3945bf90e8dac88f63575ed
+    icon: https://helm.sh/img/helm.svg
+    name: test-app-c1
+    type: application
+    urls:
+    - https://melahn.github.io/helm-repo-test/test-app-c1-0.1.0.tgz
+    version: 0.1.0
+  test-app-d1:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-05-17T21:26:23.92808533Z"
     dependencies:
-    - name: test-app-e
+    - name: test-app-e1
       repository: ""
       version: 0.1.0
     description: A Helm chart for Kubernetes
-    digest: 927a3476d0471f09a9d3c7e5f14365663d81af41810263ba5722ce12abdf8791
+    digest: dc5ba04874e6f25109a16f9389e7d60e59b87bda62ce53a0e49d914dc92b7a22
     icon: https://helm.sh/img/helm.svg
-    name: test-app-d
+    name: test-app-d1
     type: application
     urls:
     - https://melahn.github.io/helm-repo-test/test-app-d-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-15T21:09:21.853327893Z"
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-05-17T21:26:23.92913764Z"
+    dependencies:
+    - name: test-app-e1
+      repository: ""
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: cff8817c003250cf07801663b130f3be1bcf95b06325658fe106786a39c06de0
+    icon: https://helm.sh/img/helm.svg
+    name: test-app-d1
+    type: application
+    urls:
+    - https://melahn.github.io/helm-repo-test/test-app-d1-0.1.0.tgz
+    version: 0.1.0
+  test-app-g1:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-05-17T21:26:23.930230251Z"
+    dependencies:
+    - name: test-app-h1
+      repository: ""
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: afb254f7561cf28048460db5abd011ac1c2d80267965cb9ac5485930d311c4e5
+    icon: https://helm.sh/img/helm.svg
+    name: test-app-g1
+    type: application
+    urls:
+    - https://melahn.github.io/helm-repo-test/test-app-g-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-05-17T21:26:23.921847968Z"
