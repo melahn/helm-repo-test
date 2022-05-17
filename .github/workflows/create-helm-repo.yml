@@ -38,7 +38,7 @@ jobs:
           sed -i 's/0.1.0/0.2.0/g' charts/test-app-b2/Chart.yaml
           sed -i 's/test-app-b2/test-app-b/g' charts/test-app-b2/Chart.yaml
           # app-c has 3 versions
-          helm create charts/test-app-c1
+          helm create charts/test-app-c
           helm create charts/test-app-c2
           sed -i 's/0.1.0/0.2.0/g' charts/test-app-c2/Chart.yaml
           sed -i 's/test-app-c2/test-app-c/g' charts/test-app-c2/Chart.yaml
