@@ -57,7 +57,7 @@ jobs:
           echo "- name: test-app-f" >> charts/test-app-e/Chart.yaml
           echo "  repository: \"\"" >> charts/test-app-e/Chart.yaml
           echo "  version: 0.1.0" >> charts/test-app-e/Chart.yaml
-          cd charts/test-app-e1
+          cd charts/test-app-e
           helm create charts/test-app-f
           echo "dependencies:" >> charts/test-app-f/Chart.yaml
           echo "- name: test-app-x" >> charts/test-app-f/Chart.yaml
