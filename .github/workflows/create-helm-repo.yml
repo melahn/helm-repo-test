@@ -120,20 +120,19 @@ jobs:
       # Package the charts
       - name: Package the charts
         run: |
-          helm package charts/test-app-a1
+          helm package charts/test-app-a
           helm package charts/test-app-b1
           helm package charts/test-app-b2
-          helm package charts/test-app-c1
+          helm package charts/test-app-c
           helm package charts/test-app-c2
           helm package charts/test-app-c3
-          helm package charts/test-app-d1
-          # test-app-d and test-app-d contain s dynamic helmreference we
+          # test-app-d and test-app-g each contain a dynamic chart reference so we
           # can't use the helm package command. Instead we create the
           # compressed archive ourselves
           cd charts
-          tar -czf test-app-d-0.1.0.tgz test-app-d1
+          tar -czf test-app-d-0.1.0.tgz test-app-d
           mv test-app-d-0.1.0.tgz ..
-          tar -czf test-app-g-0.1.0.tgz test-app-g1
+          tar -czf test-app-g-0.1.0.tgz test-app-g
           mv test-app-g-0.1.0.tgz ..
       # Create the index
       - name: Create the index
