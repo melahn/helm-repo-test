@@ -3,9 +3,9 @@ entries:
   test-app-a:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-17T21:54:55.004187209Z"
+    created: "2022-05-19T19:19:53.759673357Z"
     description: A Helm chart for Kubernetes
-    digest: ac46df0838e0d47cc8257e599ddc5d0575fda86fe66edb4d4e5fcb78d7d78c75
+    digest: 3102359f58ed08f08ad77e94729ce5320335f5722e7ccb67913c058f6fed9cd4
     icon: https://helm.sh/img/helm.svg
     name: test-app-a
     type: application
@@ -15,9 +15,9 @@ entries:
   test-app-b:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-17T21:54:55.005376401Z"
+    created: "2022-05-19T19:19:53.760608278Z"
     description: A Helm chart for Kubernetes
-    digest: 8006a9181d7f2d1892b7bc6817c19f0bd6e8229fc3991b4b814f3294f1915b84
+    digest: 94d36ee11ec8ca208b8d54370634f3843799cbc528264e718b0013ea6c9d353e
     icon: https://helm.sh/img/helm.svg
     name: test-app-b
     type: application
@@ -26,9 +26,9 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-17T21:54:55.004782155Z"
+    created: "2022-05-19T19:19:53.760127067Z"
     description: A Helm chart for Kubernetes
-    digest: 96e56a534717034824452b4ca9c8b54ee099afac21758cbef8d5b98488370022
+    digest: a2ff2319f61a6d8059d02fd9a0891a452c4de47ef1c1909e0216f30f99c0e85e
     icon: https://helm.sh/img/helm.svg
     name: test-app-b
     type: application
@@ -38,9 +38,9 @@ entries:
   test-app-c:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-17T21:54:55.007065433Z"
+    created: "2022-05-19T19:19:53.76204801Z"
     description: A Helm chart for Kubernetes
-    digest: 62901cf98b67a9c59b490edfe60fee0746597f5b12a129b5eb802a6dfef1b722
+    digest: b056a52257721b0f3db10b984185aa740edcdc65fea6f3f4d68e353b20a55e20
     icon: https://helm.sh/img/helm.svg
     name: test-app-c
     type: application
@@ -49,9 +49,9 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-17T21:54:55.006543292Z"
+    created: "2022-05-19T19:19:53.761612401Z"
     description: A Helm chart for Kubernetes
-    digest: 4486ff04aa6e83dbd27fd62fa8317729f3977d16d3b91426a2e6ed4d240f36b9
+    digest: dba51ef736d8b12b10ab4db4f10e89150192730e2f6b0d17179c327f50702133
     icon: https://helm.sh/img/helm.svg
     name: test-app-c
     type: application
@@ -60,9 +60,9 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-17T21:54:55.006018851Z"
+    created: "2022-05-19T19:19:53.76112579Z"
     description: A Helm chart for Kubernetes
-    digest: 2d9f86ce3e7a494a576903e95751b7a12a632aa4957c3bfca77ed16212b312f0
+    digest: 7e688c08faa892d57b2a01f28f148eb461bf44fa9deb0dbeb7cbf3289c7181e1
     icon: https://helm.sh/img/helm.svg
     name: test-app-c
     type: application
@@ -72,13 +72,13 @@ entries:
   test-app-d:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-17T21:54:55.008340832Z"
+    created: "2022-05-19T19:19:53.763313939Z"
     dependencies:
     - name: test-app-e
       repository: ""
       version: 0.1.0
     description: A Helm chart for Kubernetes
-    digest: 78faad5f59268195b7cd93bc6029ad380b75f0b387179fae572e86738ae9dc27
+    digest: fc6095d3f2a9f7e73acfada40cdd3f86fd2be88287f4b462079dba1843f65f27
     icon: https://helm.sh/img/helm.svg
     name: test-app-d
     type: application
@@ -88,17 +88,17 @@ entries:
   test-app-g:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-17T21:54:55.00959813Z"
+    created: "2022-05-19T19:19:53.764386763Z"
     dependencies:
     - name: test-app-h
       repository: ""
       version: 0.1.0
     description: A Helm chart for Kubernetes
-    digest: 278d2059820440fab61ecf64bf194be50de5e716066e686f5348e3689bc92818
+    digest: de4e806c0375c5e541a44c55c71e118f14debc85642fc6c4be28c6c551e8a2b8
     icon: https://helm.sh/img/helm.svg
     name: test-app-g
     type: application
     urls:
     - https://melahn.github.io/helm-repo-test/test-app-g-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-17T21:54:55.00343735Z"
+generated: "2022-05-19T19:19:53.759000842Z"
