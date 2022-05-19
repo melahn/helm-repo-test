@@ -113,6 +113,9 @@ jobs:
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/charts/test-app-e/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d/charts/test-app-e/charts/test-app-f/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d2/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d2/charts/test-app-e/Chart.yaml
+          echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-d2/charts/test-app-e/charts/test-app-f/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-g/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-g/charts/test-app-h/Chart.yaml
           echo "icon: \"https://helm.sh/img/helm.svg\"" >> charts/test-app-g/charts/test-app-h/charts/test-app-i/Chart.yaml
@@ -125,6 +128,8 @@ jobs:
           helm lint charts/test-app-c3
           helm lint charts/test-app-d
           helm lint charts/test-app-d/charts/test-app-e
+          helm lint charts/test-app-d2
+          helm lint charts/test-app-d2/charts/test-app-e
           # Expect a lint warning on test-app-f and test-app-i since they each contain
           # a dynamic dependency.
           #
@@ -134,6 +139,7 @@ jobs:
           # In the case of test-app-i, the dependency does not exists in a helm repo and
           # so it wil fail when used even with a helm dependency update.
           helm lint charts/test-app-d/charts/test-app-e/charts/test-app-f
+          helm lint charts/test-app-d2/charts/test-app-e/charts/test-app-f
           helm lint charts/test-app-g
           helm lint charts/test-app-g/charts/test-app-h
           helm lint charts/test-app-g/charts/test-app-h/charts/test-app-i
