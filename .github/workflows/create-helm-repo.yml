@@ -152,6 +152,8 @@ jobs:
           cd charts
           tar -czf test-app-d-0.1.0.tgz test-app-d
           mv test-app-d-0.1.0.tgz ..
+          tar -czf test-app-d-0.2.0.tgz test-app-d2
+          mv test-app-d-0.2.0.tgz ..
           tar -czf test-app-g-0.1.0.tgz test-app-g
           mv test-app-g-0.1.0.tgz ..
       # Create the index
