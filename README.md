@@ -34,6 +34,13 @@ There are five helm charts in this repo, each with a different characteristic to
         - test-app-f
           - version 0.1.0
           - depends on https://melahn.github.io/helm-repo test-app-x
+- test-app-d
+  - version 0.2.0
+    - test-app-e 
+      - version 0.1.0
+        - test-app-f
+          - version 0.1.0
+          - depends on https://melahn.github.io/helm-repo test-app-x
 - test-app-g
   - version 0.1.0
     - test-app-h 
