@@ -60,7 +60,7 @@ jobs:
           cd charts/test-app-e
           helm create charts/test-app-f
           echo "dependencies:" >> charts/test-app-f/Chart.yaml
-          echo "- name: test-app-x" >> charts/test-app-f/Chart.yaml
+          echo "- name: test-app-y" >> charts/test-app-f/Chart.yaml
           echo "  repository: https://melahn.github.io/helm-repo" >> charts/test-app-f/Chart.yaml
           echo "  version: 0.1.0" >> charts/test-app-f/Chart.yaml
           cd ../../../..
@@ -71,6 +71,9 @@ jobs:
           echo "- name: test-app-e" >> charts/test-app-d2/Chart.yaml
           echo "  repository: \"\"" >> charts/test-app-d2/Chart.yaml
           echo "  version: 0.1.0" >> charts/test-app-d2/Chart.yaml
+          echo "- name: test-app-x" >> charts/test-app-d2/Chart.yaml
+          echo "  repository: https://melahn.github.io/helm-repo" >> charts/test-app-d2/Chart.yaml
+          echo "  version: 0.1.0" >> charts/test-app-f/Chart.yaml
           cd charts/test-app-d2
           helm create charts/test-app-e
           echo "dependencies:" >> charts/test-app-e/Chart.yaml
@@ -80,7 +83,7 @@ jobs:
           cd charts/test-app-e
           helm create charts/test-app-f
           echo "dependencies:" >> charts/test-app-f/Chart.yaml
-          echo "- name: test-app-x" >> charts/test-app-f/Chart.yaml
+          echo "- name: test-app-y" >> charts/test-app-f/Chart.yaml
           echo "  repository: https://melahn.github.io/helm-repo" >> charts/test-app-f/Chart.yaml
           echo "  version: 0.1.0" >> charts/test-app-f/Chart.yaml
           cd ../../../..
@@ -152,7 +155,7 @@ jobs:
           helm package charts/test-app-c
           helm package charts/test-app-c2
           helm package charts/test-app-c3
-          # test-app-d and test-app-g each contain a dynamic chart reference so we
+          # test-app-d and test-app-g each contain a dynamic chart dependency so we
           # can't use the helm package command. Instead we create the
           # compressed archive ourselves
           cd charts
