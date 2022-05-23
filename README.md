@@ -18,32 +18,23 @@ Then you can get any of the charts in the repo using helm commands.
 
 There are five helm charts in this repo, each with a different characteristic to allow testing variations in test tools.
 
-- test-app-a 
-  - version 0.1.0
-- test-app-b 
-  - version 0.1.0
-  - version 0.2.0
+Here are generated Chart Maps generated with [Helm Chart Map](https://github.com/melahn/helm-chartmap) to illustrate the shape of each of the helm charts.  In the case of test-app-g, this chart is deliberately created with an error in which it includes non-existent dynamic chart to allow testing that condition. So a Chart Map could not be generated for that case.  A text description is provided instead.
+
+- test-app-a
+  ![test-app-a-0.1.0.png](./chartmaps/test-app-a-0.1.0.png)
+- test-app-b
+  ![test-app-b-0.1.0.png](./chartmaps/test-app-b-0.1.0.png)
+  ![test-app-b-0.2.0.png](./chartmaps/test-app-b-0.2.0.png)
 - test-app-c
-  - version 0.1.0
-  - version 0.2.0
-  - version 0.3.0
+  ![test-app-c-0.1.0.png](./chartmaps/test-app-c-0.1.0.png)
+  ![test-app-c-0.2.0.png](./chartmaps/test-app-c-0.2.0.png)
+  ![test-app-c-0.3.0.png](./chartmaps/test-app-c-0.3.0.png)
 - test-app-d
-  - version 0.1.0
-    - test-app-e 
-      - version 0.1.0
-        - test-app-f
-          - version 0.1.0
-          - depends on https://melahn.github.io/helm-repo test-app-x
-- test-app-d
-  - version 0.2.0
-    - test-app-e 
-      - version 0.1.0
-        - test-app-f
-          - version 0.1.0
-          - depends on https://melahn.github.io/helm-repo test-app-x
+  ![test-app-d-0.1.0.png](./chartmaps/test-app-d-0.1.0.png)
+  ![test-app-d-0.2.0.png](./chartmaps/test-app-d-0.2.0.png)
 - test-app-g
   - version 0.1.0
-    - test-app-h 
+    - test-app-h
       - version 0.1.0
         - test-app-i
           - version 0.1.0
