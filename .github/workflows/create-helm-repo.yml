@@ -73,7 +73,7 @@ jobs:
           echo "  version: 0.1.0" >> charts/test-app-d2/Chart.yaml
           echo "- name: test-app-x" >> charts/test-app-d2/Chart.yaml
           echo "  repository: https://melahn.github.io/helm-repo" >> charts/test-app-d2/Chart.yaml
-          echo "  version: 0.1.0" >> charts/test-app-f/Chart.yaml
+          echo "  version: 0.1.0" >> charts/test-app-d2/Chart.yaml
           cd charts/test-app-d2
           helm create charts/test-app-e
           echo "dependencies:" >> charts/test-app-e/Chart.yaml
